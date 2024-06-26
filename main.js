@@ -18,10 +18,14 @@ intervalToneOffButton.addEventListener('click', (e) => {
     intervalTone.stopNote()
 })
 nextButton.addEventListener('click', (e) => {
-    if (!(typeof baseTone.oscillator === "undefined")) {
+    if (baseTone.playing) {
         baseTone.stopNote()
+    }
+    if (intervalTone.playing) {
         intervalTone.stopNote()
     }
     pickBaseNote()
     pickInterval()
 })
+pickBaseNote()
+pickInterval()

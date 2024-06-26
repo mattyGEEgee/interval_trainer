@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+form {
+    width: 66%;
+    margin: 2ch auto;
+}
+form legend {
+    margin: 0 auto
+}
+fieldset {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1ch;
+    border-radius: 4ch;
+}
+fieldset#controls {
+    border: none;
+}
+input[type=button] {
+    width: 5ch;
+    height: 2rem;
+    border-radius: 1.7ch;
+}
+input#next {
+    width: 7ch;
+    margin: 2rem auto;
+    border-radius: 2ch;
+}
+p#answer {
+    width: 9ch;
+    margin: 2rem auto
+}

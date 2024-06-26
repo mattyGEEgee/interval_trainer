@@ -25,6 +25,7 @@ let gain = new GainNode(audioContext, {
 class Oscillator {
     oscillator
     previousNote
+    playing = false
 
     connectToDestination() {
         this.oscillator.connect(gain).connect(audioContext.destination)
@@ -39,9 +40,11 @@ class Oscillator {
     }
     playNote() {
         this.oscillator.start()
+        this.playing = true
     }
     stopNote() {
         this.oscillator.stop()
+        this.playing = false
         this.chooseNote(this.previousNote)
     }
 }
@@ -60,6 +63,7 @@ class IntervalOscillator extends Oscillator {
     }
     stopNote() {
         this.oscillator.stop()
+        this.playing = false
         this.chooseNote(this.previousNote, this.#previousInterval)
     }
 }
